@@ -29,3 +29,10 @@ No idea what it means to "insert the missing code (e.g: ALO for Alonso) for driv
 
 #### Scripting
 `src` is currently empty. I would have liked to create scripts to run the S3 bucket mount and the col_to_int_type() function defined in the assignment notebook - this would be more proper. However, to do this I need to import the scripts stored in /src from /reports - Not sure how to do this. This has also been added to the.
+
+## 22 Feb 2020:
+* Fixed Question 3 issue
+
+### Notes
+#### On question 3
+Turns out there were missing driver codes - these were reflected as "\N" in the data, as was true for other missing values. Missing driver codes were replaced with the first 3 letters of their last name, as is the convention for F1 drivers' codes. A few exceptions were mentioned in the report, usually arising from the first 3 letters of the last name being shared between two or more drivers. These were not dealt with. Chasing down exceptions would've been a tedious manual endeavour given the myriad of ways that FIA resolved these conflicts. 

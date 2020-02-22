@@ -1,12 +1,10 @@
-1. Deal with question 3.
-
-2. Find out how to run scripts from the src folder within ipynb docs in the
+1. Find out how to run scripts from the src folder within ipynb docs in the
 reports folder
 
-3. Make scripts for the following and place in src:
+2. Make scripts for the following and place in src:
   - Code for mounting
   - Functions used
 
-4. Improve response to question 5 in Assn 1 report
+3. Improve response to question 5 in Assn 1 report
   - Create table that only has the person with the most wins, and the person
     with the most losses, for each "race"
