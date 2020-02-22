@@ -15,6 +15,6 @@
     constructor clinched pole position most often?)
 
 ## Resources
-See [`\references`](\references) for resources on
+See [`\references`](references) for resources on
 * Formula 1
 * The F1 dataset
