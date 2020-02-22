@@ -18,3 +18,7 @@
 See [`\references`](references) for resources on
 * Formula 1
 * The F1 dataset
+
+## Lab notebook
+Refer to the [`lab notebook`](lab_notebook) for more detailed information about
+ project progress
