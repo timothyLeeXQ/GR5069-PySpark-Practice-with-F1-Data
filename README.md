@@ -6,7 +6,7 @@
 * Answer simple questions about the F1 Data:
   + What was the average time each driver spent at the pit stop for each race?
   + Rank the average time spent at the pit stop in order of who won each race
-  + Insert the missing code(e.g: ALO for Alonso) for drivers based on the
+  + Insert the missing code (e.g: ALO for Alonso) for drivers based on the
    'drivers' dataset
   + Who is the youngest and oldest driver for each race? Create a new column
    called “Age”
