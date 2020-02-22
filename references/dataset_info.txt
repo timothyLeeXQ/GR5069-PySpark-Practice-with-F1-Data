@@ -1,0 +1,4 @@
+Note: Found info on the dataset. See:
+
+* Kaggle page with the data - https://www.kaggle.com/cjgdev/formula-1-race-data-19502017
+* The API data is from - http://ergast.com/mrd/methods/results/
