@@ -4,7 +4,3 @@ reports folder
 2. Make scripts for the following and place in src:
   - Code for mounting
   - Functions used
-
-3. Improve response to question 5 in Assn 1 report
-  - Create table that only has the person with the most wins, and the person
-    with the most losses, for each "race"

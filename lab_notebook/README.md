@@ -35,4 +35,27 @@ No idea what it means to "insert the missing code (e.g: ALO for Alonso) for driv
 
 ### Notes
 #### On question 3
-Turns out there were missing driver codes - these were reflected as "\N" in the data, as was true for other missing values. Missing driver codes were replaced with the first 3 letters of their last name, as is the convention for F1 drivers' codes. A few exceptions were mentioned in the report, usually arising from the first 3 letters of the last name being shared between two or more drivers. These were not dealt with. Chasing down exceptions would've been a tedious manual endeavour given the myriad of ways that FIA resolved these conflicts. 
+Turns out there were missing driver codes - these were reflected as "\N" in the data, as was true for other missing values. Missing driver codes were replaced with the first 3 letters of their last name, as is the convention for F1 drivers' codes. A few exceptions were mentioned in the report, usually arising from the first 3 letters of the last name being shared between two or more drivers. These were not dealt with. Chasing down exceptions would've been a tedious manual endeavour given the myriad of ways that FIA resolved these conflicts.
+
+## 25 Feb 2020:
+* Fixed Question 5
+* Created mount link to xql2001 S3 bucket.
+* Added commands to write question response tables to xql2001 S3 bucket
+* Shortened variable names in ipynb
+
+### Notes
+A few important things were clarified (I think).
+
+#### Answers to be submitted
+We are to present our responses as CSV tables written to the S3 bucket. Ideally, this would be done in code.
+
+In light of this, I have created code to mount the newly created xql2001-gr5069 S3 bucket, polished the code (mostly by shortening obnoxiously long variable names), and had the tables that explicitly provide answers written into the xql2001 S3 bucket.
+
+I also took the opportunity to fix the issue noted above about question 5. The response now comes in two separate DFs - one that shows the drivers with the most wins (and how many) for a given circuit, and one that does the same for losses. This has been removed from TODO.
+
+#### src
+The source code to be accepted is the ipynb file exported from databricks. The S3 mount code doesn't work outside databricks, so you needed to work on a notebook there anyway, which means that as long as you wanted to work with direct read/write access to S3, your code has to be in notebook form, not script form.
+
+So after cleaning up the code in databricks, I exported the file and moved it into the src folder. The reports folder is now empty and hence absent from the Github repo.
+
+I've not removed the issues related to do this from TODO, because I feel this solution is still not ideal and I'm still missing something...
