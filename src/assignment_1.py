@@ -188,7 +188,7 @@ df_drivers = df_drivers.withColumn('last_name_sub', F.substring(F.col('surname')
 
   
 display(df_drivers)
-df_drivers.write.csv('/mnt/xql2001-gr5069/processed/assignment_1/question3_df_drivers.csv')
+df_drivers.coalesce(1).write.csv('/mnt/xql2001-gr5069/processed/assignment_1/question3_df_drivers.csv')
 
 # COMMAND ----------
 
@@ -246,7 +246,7 @@ display(df_avg_pit_time.select('driver_code',
                                'average_pit_time(ms)'
                               )
        )
-df_avg_pit_time.write.csv('/mnt/xql2001-gr5069/processed/assignment_1/question1_df_avg_pit_time.csv')
+df_avg_pit_time.coalesce(1).write.csv('/mnt/xql2001-gr5069/processed/assignment_1/question1_df_avg_pit_time.csv')
 
 # COMMAND ----------
 
@@ -325,7 +325,7 @@ display(df_avg_pittimes_driver_race_pos.select('driver_code',
                                               )
        )
 
-df_avg_pittimes_driver_race_pos.write.csv('/mnt/xql2001-gr5069/processed/assignment_1/question2_df_avg_pittimes_driver_race_pos.csv')
+df_avg_pittimes_driver_race_pos.coalesce(1).write.csv('/mnt/xql2001-gr5069/processed/assignment_1/question2_df_avg_pittimes_driver_race_pos.csv')
 
 # COMMAND ----------
 
@@ -358,7 +358,7 @@ df_driver_race_pos_age = df_driver_race_pos_age\
   .orderBy('raceId', 'age')
 
 display(df_driver_race_pos_age)
-df_driver_race_pos_age.write.csv('/mnt/xql2001-gr5069/processed/assignment_1/question4_df_driver_race_pos_age.csv')
+df_driver_race_pos_age.coalesce(1).write.csv('/mnt/xql2001-gr5069/processed/assignment_1/question4_df_driver_race_pos_age.csv')
 
 # COMMAND ----------
 
@@ -414,10 +414,6 @@ df_races_win_loss = df_drivers_results_races\
   .count()\
   .na.fill(0)
 
-
-
-
-
 display(df_races_win_loss)
 
 # COMMAND ----------
@@ -462,7 +458,7 @@ df_races_most_wins = df_races_most_wins.select('circuitId',
   .orderBy('race_name', 'win')
 
 display(df_races_most_wins)
-df_races_most_wins.write.csv('/mnt/xql2001-gr5069/processed/assignment_1/question5a_df_races_most_wins.csv')
+df_races_most_wins.coalesce(1).write.csv('/mnt/xql2001-gr5069/processed/assignment_1/question5a_df_races_most_wins.csv')
 
 # COMMAND ----------
 
@@ -494,7 +490,7 @@ df_races_most_lose = df_races_most_lose.select('circuitId',
   .orderBy('race_name', 'lose')
 
 display(df_races_most_lose)
-df_races_most_lose.write.csv('/mnt/xql2001-gr5069/processed/assignment_1/question5b_df_races_most_lose.csv')
+df_races_most_lose.coalesce(1).write.csv('/mnt/xql2001-gr5069/processed/assignment_1/question5b_df_races_most_lose.csv')
 
 # COMMAND ----------
 
@@ -567,7 +563,7 @@ df_quals_constructors_pole = df_quals\
 
 
 display(df_quals_constructors_pole)
-df_quals_constructors_pole.write.csv('/mnt/xql2001-gr5069/processed/assignment_1/question6_df_quals_constructors_pole.csv')
+df_quals_constructors_pole.coalesce(1).write.csv('/mnt/xql2001-gr5069/processed/assignment_1/question6_df_quals_constructors_pole.csv')
 
 # COMMAND ----------
 
