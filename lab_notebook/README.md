@@ -59,3 +59,14 @@ The source code to be accepted is the ipynb file exported from databricks. The S
 So after cleaning up the code in databricks, I exported the file and moved it into the src folder. The reports folder is now empty and hence absent from the Github repo.
 
 I've not removed the issues related to do this from TODO, because I feel this solution is still not ideal and I'm still missing something...
+
+
+## 26 Feb 2020:
+* Fixed issue where csv is saved in multiple parts on S3
+
+### Notes
+
+#### Writing CSVs in Spark
+From today's class and exchange on slack, I discovered that csv tables written using Pyspark's .write.csv() method created many CSV file parts rather than a single large CSV. This has something to do with Spark's parallel processing capabilities. The issue can be, and was, resolved using the coalesce(1) function, as we were advised.
+
+**For overwritting S3 files in the future - the old files needed to be deleted on the S3 bucket for the new, coalesced files to be written.**
